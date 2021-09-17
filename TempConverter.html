@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        body {
+            background-color: royalblue;
+        }
+        .container {
+            width: 500px;
+            height: 300px;
+            background-color: powderblue;
+            margin: 0 auto;
+        }
+        select {
+            width: 230px;
+            height: 40px;
+            font-size: 18px;
+            background-color: white;
+            border: 1px solid black;
+            margin: 30px 125px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .output {
+            height: 40px;
+            width: 150px;
+            font-size: 16px;
+            background-color: #fff;
+            border: 2px solid grey;
+        }
+
+        input {
+            height: 40px;
+            margin-top: 15px;
+            border: none;
+        }
+
+
+        .button {
+            text-align: center;
+        }
+        button {
+            height: 40px;
+            width: 100px;
+        }
+    </style>
+    <body>
+        <h1>
+            Temperature Converter
+        </h1>
+        <div class="container">
+            <select name="temperature" id="temperature">
+                <option value="Celsius" id="celsius">Celsius To Fahreinheit</option>
+                <option class="fah" id="fah" value="Fahrenheit">Fahrenheit To Celsius</option>
+            </select>
+            <div class="box">
+                <input type="number" id="number" required>
+                <p class="output" id="output"></p>
+            </div>
+
+            <div class="button">
+                <button id="convert">Convert</button>
+            </div>
+
+        </div>
+    </body>
+    <script>
+
+        var convert = document.getElementById('convert')
+        var output = document.getElementById('output')
+
+
+        convert.addEventListener('click', function () {
+            console.log('zero')
+            var number = document.getElementById('number');
+            var numb = number.value;
+
+            var select = document.getElementById('temperature')
+
+            console.log(select.selectedOptions)
+
+
+            if (select.selectedIndex == 1) {
+
+
+                console.log('yes')
+                output.innerText = (5 / 9) * (numb - 32) + ' ' + 'C'
+
+            }
+
+            if (select.selectedIndex == 0) {
+                output.innerText = (1.8 * numb + 32 + ' ' + 'F').toFixed(2);
+
+            }
+
+
+        })
+    </script>
+</html>
